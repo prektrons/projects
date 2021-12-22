@@ -6,8 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Angular Login</title>
     <script src="./js/angular.min.js"></script>
-  </head>
-  <body>
-	
+    <script src="./app/app.js"></script>
+</head>
+  <body ng-app='logincode'>
+      <div ng-controller='LoginController'>
+	     <form ng-submit='login()'>
+           Username:<input type="text"><br>
+           Password:<input type="password"><br>
+           <input type="submit" value="Login">
+         </form>
+         </div>
   </body>
 </html>
