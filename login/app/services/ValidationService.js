@@ -1,5 +1,5 @@
 
-var app=angular.module('logincode',[])
+
 app.service('LoginService',function($http){
 this.getLogin=function(email,password){
     
