@@ -1,22 +1,27 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    UserComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+@Component({
+selector: 'app-login',
+templateUrl: './login/login.component.html',
+styleUrls: ['./login/login.component.css']
 })
-export class AppModule { }
+
+export class LoginComponent implements OnInit {
+email: string | undefined;
+    password: string | undefined;
+
+constructor(private router : Router) { }
+
+ngOnInit() {
+
+}
+
+login() {
+if(this.email == 'dhiraj@gmail.com' && this.password == 'password') {
+this.router.navigate(['user']);
+}else {
+alert("Invalid credentials.")
+}
+}
+}
